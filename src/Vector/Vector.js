@@ -184,6 +184,49 @@ class Vector {
 
         return target;
     }
+
+    /**
+     * @method div
+     * @param {Number} x
+     * @param {Number} y
+     * @param {Number} z
+     * @chainable
+     */
+    div( x = 0, y = 0, z = 0 ){
+        if( x instanceof Vector ){
+            this.x /= x.x;
+            this.y /= x.y;
+            this.z /= x.z;
+        } else if(x instanceof Array){
+            this.x /= x[0];
+            this.y /= x[1];
+            this.z /= x[2];
+        } else {
+            this.x /= x;
+            this.y /= y;
+            this.z /= z;
+        }
+
+        return this;
+    }
+
+    /**
+     * @static
+     * @method div
+     * @param  {Vector} v1 
+     * @param  {Vector} v2 
+     * @param  {Vector} target
+     */
+    static div( v1 = undefined, v2 = undefined, target = undefined ) {
+        if( !target ){
+            target = v1.clone();
+        } else {
+            target.set( v1 );
+        }
+        target.div( v2 );
+
+        return target;
+    }
 }
 
 export default Vector;

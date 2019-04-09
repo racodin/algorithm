@@ -55,7 +55,20 @@ describe('# Vector test', () => {
             v1.mul( v2 ).should.be.eql( {x: 1, y: 4, z: 9} );
             v2.mul( 1, 2, 3 ).should.be.eql( {x: 1, y: 4, z: 9} );
         });
+    });
 
+    describe('# multiplication', () => {
+        it('벡터의 나눗셈은 {x: 1, y: 1, z: 1} 이여야 한다.', () => {
+            // given
+            // when
+            let v1 = Vector.create(1, 2, 3);
+            let v2 = new Vector(1, 2, 3);
+
+            // then
+            Vector.div( v1, v2 ).should.be.eql( {x: 1, y: 1, z: 1} );
+            v1.div( v2 ).should.be.eql( {x: 1, y: 1, z: 1} );
+            v2.div( 1, 2, 3 ).should.be.eql( {x: 1, y: 1, z: 1} );
+        });
     });
 
     describe('# method chaining', () => {
