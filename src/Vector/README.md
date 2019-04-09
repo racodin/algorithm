@@ -22,11 +22,21 @@ location.add( velocity );
 
 
 ---
-### 📚 Instance methods
+### 📚 Instance and Stactic Methods
+---
+
+### Vector()
+###### 벡터 생성
+```
+var v1 = new Vector(1, 2, 3);
+var v2 = Vector.create(1, 2, 3);
+
+console.log( v1 );      // {x: 1, y: 2, z: 3}
+console.log( v2 );      // {x: 1, y: 2, z: 3}
+```
 ---
 
 ### set( value )
-> ##### @param value { Vector | Number[] } 
 ###### 벡터 설정
 ```
 var v1 = new Vector(1, 2, 3);
@@ -36,7 +46,6 @@ console.log( v1 );      // {x: 4, y: 5, z: 6}
 ```
 ---
 ### clone()
-> ##### @return { Vector } 
 ###### 벡터 복사
 ```
 var v1 = new Vector(1, 2, 3);
@@ -46,97 +55,66 @@ console.log( v2 )       // {x: 1, y: 2, z: 3}
 ```
 ---
 ### add( value )
-> ##### @param value { Vector | Number[] } 
 ###### 벡터 덧셈
 ```
 var v1 = new Vector(1, 2, 3);
 var v2 = new Vector(1, 2, 3);
 
-v1.add( v2 );           
+v1.add( 1, 2, 3 );
 console.log( v1 );      // {x: 2, y: 4, z: 6}
 
-v1.add( 1, 2, 3 );
-console.log( v1 );      // {x: 3, y: 6, z: 9}
+v1.add( v2 );
+console.log( v1 );      // {x: 5, y: 6, z: 9}
+
+var v3 = Vector.add( v1, v2 );
+console.log( v3 );      // {x: 6, y: 8, z: 12}
 ```
 ---
 ### sub( value )
-> ##### @param value { Vector | Number[] } 
 ###### 벡터 뺄셈
 ```
 var v1 = new Vector(1, 2, 3);
 var v2 = new Vector(1, 2, 3);
 
-v1.sub( v2 );
+v1.sub( 1, 2, 3 );
 console.log( v1 );      // {x: 0, y: 0, z: 0}
 
-v1.sub( 1, 2, 3 );
+v1.sub( v2 );
 console.log( v1 );      // {x: -1, y: -2, z: -3}
+
+var v3 = Vector.sub( v1, v2 );
+console.log( v3 );      // {x: -2, y: -4, z: -6}
 ```
 ---
 ### mul( value )
-> ##### @param value { Vector | Number[] } 
 ###### 벡터의 실수곱셈
 ```
 var v1 = new Vector(1, 2, 3);
 var v2 = new Vector(1, 2, 3);
 
-v1.mul( v2 );
-console.log( v1 );      // {x: 1, y: 4, z: 6}
-
 v1.mul( 1, 2, 3 );
-console.log( v1 );      // {x: 1, y: 8, z: 18}
+console.log( v1 );      // {x: 1, y: 4, z: 9}
+
+v1.mul( v2 );
+console.log( v1 );      // {x: 1, y: 8, z: 27}
+
+var v3 = Vector.mul( v1, v2 );
+console.log( v3 );      // {x: 1, y: 16, z: 81}
 ```
 ---
 ### div( value )
-> ##### @param value { Vector | Number[] } 
 ###### 벡터의 실수나눗셈
 ```
-var v1 = new Vector(1, 2, 3);
+var v1 = new Vector(1, 16, 81);
 var v2 = new Vector(1, 2, 3);
-
-v1.div( v2 );
-console.log( v1 );      // {x: 1, y: 1, z: 1}
 
 v1.div( 1, 2, 3 );
-console.log( v1 );      // {x: 1, y: 0.5, z: 0.33}
+console.log( v1 );      // {x: 1, y: 8, z: 27}
+
+v1.div( v2 );
+console.log( v1 );      // {x: 1, y: 4, z: 9}
+
+var v3 = Vector.mul( v1, v2 );
+console.log( v3 );      // {x: 1, y: 2, z: 3}
 ```
 
-
----
-### 📚 Stactic methods
----
-
-### add( v1, v2, target )
-> ##### @param v1 { Vector } 
-> ##### @param v2 { Vector } 
-> ##### @param target { Vector } 
-###### 벡터 덧셈
-```
-var v1 = new Vector(1, 2, 3);
-var v2 = new Vector(1, 2, 3);
-
-var v3 = Vector.add( v1, v2 );
-console.log( v3 );      // {x: 2, y: 4, z: 6}
-
-var v4 = new Vector();
-Vector.add( v1, v2, v4 );   
-console.log( v4 );      // {x: 2, y: 4, z: 6}
-```
----
-### sub( v1, v2, target )
-> ##### @param v1 { Vector } 
-> ##### @param v2 { Vector } 
-> ##### @param target { Vector } 
-###### 벡터 뺄셈
-```
-var v1 = new Vector(1, 2, 3);
-var v2 = new Vector(1, 2, 3);
-
-var v3 = Vector.sub( v1, v2 );
-console.log( v3 );      // {x: 0, y: 0, z: 0}
-
-var v4 = new Vector();
-Vector.sub( v1, v2, v4 );   
-console.log( v4 );      // {x: 0, y: 0, z: 0}
-```
----
