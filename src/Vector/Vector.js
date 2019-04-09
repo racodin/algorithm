@@ -5,12 +5,36 @@
 class Vector {
     /**
      * @class Vector
-     * @param {Number} [x] x component of the vector
-     * @param {Number} [y] y component of the vector
-     * @param {Number} [z] z component of the vector
+     * @param {Number} x
+     * @param {Number} y
+     * @param {Number} z
      */
     constructor( x = 0, y = 0, z = 0 ){
-        if(x instanceof Array){
+        if( typeof x !== "number"){
+            throw Error("the param is not number");
+        }
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    static create( x = 0, y = 0, z = 0 ){
+        return new Vector( x, y, z );
+    }
+
+    /**
+     * @method set
+     * @param {Number} x
+     * @param {Number} y
+     * @param {Number} z
+     * @chainable
+     */
+    set( x = 0, y = 0, z = 0 ){
+        if( x instanceof Vector ){
+            this.x = x.x;
+            this.y = x.y;
+            this.z = x.z;
+        } else if(x instanceof Array){
             this.x = x[0];
             this.y = x[1];
             this.z = x[2];
@@ -19,62 +43,146 @@ class Vector {
             this.y = y;
             this.z = z;
         }
-    }
-
-    static create( x = 0, y = 0, z = 0 ){
-        return new Vector( x, y, z );
-    }
-
-    /**
-     * @method add
-     * @param  {Vector|Number[]} value the vector to addition
-     * @chainable
-     */
-    add( v = undefined ){
-        this.x += v.x;
-        this.y += v.y;
-        this.z += v.z;
 
         return this;
     }
 
-    static add( v1 = undefined, v2 = undefined ) {
-        return new Vector( v1.x + v2.x, v1.y + v2.y, v1.z + v2.z );
+    /**
+     * @method clone
+     * @return {Vector}
+     */
+    clone(){
+        return new Vector(this.x, this.y, this.z);
+    }
+
+
+    /**
+     * @method add
+     * @param {Number} x
+     * @param {Number} y
+     * @param {Number} z
+     * @chainable
+     */
+    add( x = 0, y = 0, z = 0 ){
+        if( x instanceof Vector ){
+            this.x += x.x;
+            this.y += x.y;
+            this.z += x.z;
+        } else if(x instanceof Array){
+            this.x += x[0];
+            this.y += x[1];
+            this.z += x[2];
+        } else {
+            this.x += x;
+            this.y += y;
+            this.z += z;
+        }
+
+        return this;
+    }
+
+    /**
+     * @static
+     * @method add
+     * @param  {Vector} v1 
+     * @param  {Vector} v2 
+     * @param  {Vector} target
+     */
+    static add( v1 = undefined, v2 = undefined, target = undefined ) {
+        if( !target ){
+            target = v1.clone();
+        } else {
+            target.set( v1 );
+        }
+        target.add( v2 );
+
+        return target;
     }
 
     /**
      * @method sub
-     * @param  {Vector|Number[]} value the vector to subtract
+     * @param {Number} x
+     * @param {Number} y
+     * @param {Number} z
      * @chainable
      */
-    sub( v = undefined ){
-        this.x -= v.x;
-        this.y -= v.y;
-        this.z -= v.z;
+    sub( x = 0, y = 0, z = 0 ){
+        if( x instanceof Vector ){
+            this.x -= x.x;
+            this.y -= x.y;
+            this.z -= x.z;
+        } else if(x instanceof Array){
+            this.x -= x[0];
+            this.y -= x[1];
+            this.z -= x[2];
+        } else {
+            this.x -= x;
+            this.y -= y;
+            this.z -= z;
+        }
 
         return this;
     }
 
-    // subtraction: 벡터의 뺄셈 v1 - v2 = v3;
-    static sub( v1 = undefined, v2 = undefined ) {
-        return new Vector( v1.x - v2.x, v1.y - v2.y, v1.z - v2.z );
+    /**
+     * @static
+     * @method sub
+     * @param  {Vector} v1 
+     * @param  {Vector} v2 
+     * @param  {Vector} target
+     */
+    static sub( v1 = undefined, v2 = undefined, target = undefined ) {
+        if( !target ){
+            target = v1.clone();
+        } else {
+            target.set( v1 );
+        }
+        target.sub( v2 );
+
+        return target;
     }
 
     /**
      * @method mul
-     * @param  {Vector|Number[]} value the vector to multiplication
+     * @param {Number} x
+     * @param {Number} y
+     * @param {Number} z
      * @chainable
      */
-    mul( v = undefined ){
-        this.x *= v.x;
-        this.y *= v.y;
-        this.z *= v.z;
+    mul( x = 0, y = 0, z = 0 ){
+        if( x instanceof Vector ){
+            this.x *= x.x;
+            this.y *= x.y;
+            this.z *= x.z;
+        } else if(x instanceof Array){
+            this.x *= x[0];
+            this.y *= x[1];
+            this.z *= x[2];
+        } else {
+            this.x *= x;
+            this.y *= y;
+            this.z *= z;
+        }
 
         return this;
     }
 
-    static mul( v1 = undefined, v2 = undefined ) {
-        return new Vector( v1.x * v2.x, v1.y * v2.y, v1.z * v2.z );
+    /**
+     * @static
+     * @method mul
+     * @param  {Vector} v1 
+     * @param  {Vector} v2 
+     * @param  {Vector} target
+     */
+    static mul( v1 = undefined, v2 = undefined, target = undefined ) {
+        if( !target ){
+            target = v1.clone();
+        } else {
+            target.set( v1 );
+        }
+        target.mul( v2 );
+
+        return target;
     }
 }
 
