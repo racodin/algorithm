@@ -229,4 +229,4 @@ class Vector {
     }
 }
 
-export default Vector;
+export default  window.Vector = Vector;
