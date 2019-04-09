@@ -25,7 +25,7 @@ location.add( velocity );
 ### 📚 Instance and Stactic Methods
 ---
 
-### Vector()
+### Vector(x=0, y=0, z=0)
 ###### 벡터 생성
 ```
 var v1 = new Vector(1, 2, 3);
