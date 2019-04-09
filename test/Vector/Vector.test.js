@@ -16,7 +16,7 @@ describe('# Vector test', () => {
     });
 
     describe('# addition', () => {
-        it('두 벡터의 뎃셈은 {x: 2, y: 4, z: 6} 이여야 한다.', () => {
+        it('벡터의 뎃셈은 {x: 2, y: 4, z: 6} 이여야 한다.', () => {
             // given
             // when
             let v1 = Vector.create(1, 2, 3);
@@ -30,7 +30,7 @@ describe('# Vector test', () => {
     });
 
     describe('# subtraction', () => {
-        it('두 벡터의 뺄셈은 {x: 0, y: 0, z: 0} 이여야 한다.', () => {
+        it('벡터의 뺄셈은 {x: 0, y: 0, z: 0} 이여야 한다.', () => {
             // given
             // when
             let v1 = Vector.create(1, 2, 3);
@@ -44,7 +44,7 @@ describe('# Vector test', () => {
     });
 
     describe('# multiplication', () => {
-        it('두 벡터의 곱셈은 {x: 1, y: 4, z: 9} 이여야 한다.', () => {
+        it('벡터의 곱셈은 {x: 1, y: 4, z: 9} 이여야 한다.', () => {
             // given
             // when
             let v1 = Vector.create(1, 2, 3);
