@@ -23,7 +23,6 @@ location.add( velocity );
 
 ---
 ### 📚 Instance and Stactic Methods
-Link: [Google](https://google.com, "google link")
 
 * [Vector()](https://github.com/racodin/algorithm-analysis/tree/master/src/Vector#vector-x-y-z-, "벡터 생성") - 벡터 생성
 * [set()](https://github.com/racodin/algorithm-analysis/tree/master/src/Vector#set-x-y-z-, "벡터 설정") - 벡터 설정
