@@ -24,21 +24,21 @@ location.add( velocity );
 ---
 ### 📚 Instance and Stactic Methods
 
-* [Vector()](#vector-x-y-z-, "벡터 생성") - 벡터 생성
-* [set()](#set-x-y-z-, "벡터 설정") - 벡터 설정
-* [clone()](#clone, "벡터 복사") - 벡터 복사
-* [add()](#add-x-y-z-, "벡터 덧셈") - 벡터 덧셈
-* [sub()](#sub-x-y-z-, "벡터 뺄셈") - 벡터 뺄셈
-* [mult()](#mult-value-, "벡터 곱셈") - 벡터 곱셈
-* [div()](#div-value-, "벡터 나눗셈") - 벡터 나눗셈
-* [mag()](#mag, "벡터 크기 계산") - 벡터 크기 계산
-* [normalize()](#normalize, "벡터를 정규화하여 단위 길이를 1로 변환") - 벡터를 정규화하여 단위 길이를 1로 변환
-* [limit()](#limit-max-, "벡터의 크기를 제한") - 벡터의 크기를 제한
-* [dist()](#dist-value-, "두 벡터간의 거리를 계산") - 두 벡터간의 거리를 계산
-* [heading()](#heading-type-, "벡터의 방향을 각도로 표시 (2d만 가능)") - 벡터의 방향을 각도로 표시 (2d만 가능)
-* [dot()](#dot-value-, "두 벡터의 내적을 계산") - 두 벡터의 내적을 계산
-* [cross()](#cross-value-, "두 벡터의 외적을 계산 (3d만 가능)") - 두 벡터의 외적을 계산 (3d만 가능)
-* [angleBetween()](#anglebetween-value-, "두 벡터간의 각도를 계산") - 두 벡터간의 각도를 계산
+* [Vector()](#vector-x-y-z-) - 벡터 생성
+* [set()](#set-x-y-z-) - 벡터 설정
+* [clone()](#clone) - 벡터 복사
+* [add()](#add-x-y-z-) - 벡터 덧셈
+* [sub()](#sub-x-y-z-) - 벡터 뺄셈
+* [mult()](#mult-value-) - 벡터 곱셈
+* [div()](#div-value-) - 벡터 나눗셈
+* [mag()](#mag) - 벡터 크기 계산
+* [normalize()](#normalize) - 벡터를 정규화하여 단위 길이를 1로 변환
+* [limit()](#limit-max-) - 벡터의 크기를 제한
+* [dist()](#dist-value-) - 두 벡터간의 거리를 계산
+* [heading()](#heading-type-) - 벡터의 방향을 각도로 표시 (2d만 가능)
+* [dot()](#dot-value-) - 두 벡터의 내적을 계산
+* [cross()](#cross-value-) - 두 벡터의 외적을 계산 (3d만 가능)
+* [angleBetween()](#anglebetween-value-) - 두 벡터간의 각도를 계산
 ---
 
 ### Vector( x, y, z )
